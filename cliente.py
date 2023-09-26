@@ -32,6 +32,7 @@ def menu_customer():
             print("\nCliente " + name + " cadastrado com sucesso!!\n")
         elif customer_option == 2:
             CPF = validate_cpf(input("\nDigite o CPF para consulta: "))
+            delete_banco_dados(CPF)
         elif customer_option == 3:
             print("Atualizar Cliente")            
         elif customer_option == 4:
