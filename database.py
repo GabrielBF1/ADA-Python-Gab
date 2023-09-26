@@ -1,4 +1,4 @@
-import pyodbc
+import pyodbc 
 
 def retornar_cursor_banco_dados():
   connection = pyodbc.connect(retorna_string_conexao_banco_dados())
