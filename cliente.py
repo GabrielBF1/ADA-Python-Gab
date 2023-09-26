@@ -1,4 +1,5 @@
 from utils import *
+from database import *
 
 def menu_customer():
     menu_control = True
@@ -23,9 +24,10 @@ def menu_customer():
                 "CPF": CPF,
                 "RG": RG,
                 "Nascimento": birth_date,
-                "Endereco": CEP,
+                "Endereco": str(CEP),
                 "Numero": house_number
             }
+            insert_banco_dados(customer_dict)
             customer_list.append(customer_dict)
             print("\nCliente " + name + " cadastrado com sucesso!!\n")
         elif customer_option == 2:
