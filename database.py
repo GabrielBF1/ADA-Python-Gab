@@ -18,7 +18,10 @@ def select_banco_dados():
   cursor, connection = retornar_cursor_banco_dados()
   cursor.execute("select * from cliente;")
   clientes = cursor.fetchall()
-  print(clientes)
+  i = 0
+  for c in clientes:
+    print("Cliente " + str(i) + ": " + str(c) + "\n")
+    i = i + 1
   connection.commit()
 
 
@@ -38,17 +41,7 @@ def delete_banco_dados(cpf):
   cursor.execute(delete_query)
   connection.commit()  
 
-cliente = [{'Nome': 'gabriel', 
-           'CPF': '110.415.949-09', 
-           'RG': '09.318.294-4', 
-           'Nascimento': '05/06/1997',
-             'Endereco': "{'CEP': '82560-420', 'Logradouro': 'Rua Roque Lazarotto', 'Bairro': 'Boa Vista', 'Cidade': 'Curitiba', 'Estado': 'PR'}",
-            'Numero': '55'}]
-insert_banco_dados(cliente[0])
 
 # select_banco_dados()
 # delete_banco_dados(cliente["CPF"])
 # select_banco_dados()
-
-
-select_banco_dados()

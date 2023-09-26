@@ -39,22 +39,7 @@ def menu_customer():
         elif customer_option == 5:
             os.system('cls')
             print("\nLista de clientes: ")
-            print(customer_list)
+            select_banco_dados()
         elif customer_option == 6:
             print("Voltando para menu inicial...")
             menu_control = False
-
-
-dict_test = [{'Nome': 'g',
-                'CPF': '110.415.949-09',
-                'RG': '09.123.456-9',
-                'Nascimento': '05/06/1997', 
-                'Endereco': {'CEP': '82560-420', 'Logradouro': 'Rua Roque Lazarotto', 'Numero': '50'}},
-            {'Nome': 'pedro',
-              'CPF': '629.437.920-20',
-              'RG': '09.345.123-9',
-              'Nascimento': '10/10/2000',
-              'Endereco': {'CEP': '80030-000', 'Logradouro': 'Avenida João Gualb', 'Numero': '50'}}]
-
-dict_test[1].update({'Nome':'miguel'})
-print(dict_test)
