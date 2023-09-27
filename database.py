@@ -35,6 +35,13 @@ def insert_banco_dados(cliente):
   cursor.execute(insert_query, values)
   connection.commit()
 
+def update_banco_dados(cliente):
+  cursor, connection = retornar_cursor_banco_dados()
+  update_query = """UPDATE cliente SET nome = ?, RG = ?, nascimento = ?, endereco = ?, numero = ? where CPF = """ + '\'' + cliente["CPF"] + '\''
+  values = (cliente['Nome'], cliente['RG'], cliente['Nascimento'], cliente['Endereco'],cliente['Numero'])
+  cursor.execute(update_query, values)
+  connection.commit()
+
 def delete_banco_dados(cpf):
   cursor, connection = retornar_cursor_banco_dados()
   delete_query = "DELETE FROM cliente WHERE cpf = '" + cpf + "';"
@@ -42,6 +49,11 @@ def delete_banco_dados(cpf):
   connection.commit()  
 
 
-# select_banco_dados()
-# delete_banco_dados(cliente["CPF"])
-# select_banco_dados()
+cliente = {'Nome': 'gabrie', 
+           'CPF': '110.415.949-09', 
+           'RG': '09.318.296-4', 
+           'Nascimento': '05/05/1997',
+             'Endereco': "{'CEP': '82560-420', 'Logradouro': 'Roque Lazarotto', 'Bairro': 'Boa Vista', 'Cidade': 'Curitiba', 'Estado': 'PR'}",
+            'Numero': '66'}
+
+update_banco_dados(cliente)
