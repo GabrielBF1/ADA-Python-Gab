@@ -49,11 +49,9 @@ def delete_banco_dados(cpf):
   connection.commit()  
 
 
-cliente = {'Nome': 'gabrie', 
-           'CPF': '110.415.949-09', 
-           'RG': '09.318.296-4', 
-           'Nascimento': '05/05/1997',
-             'Endereco': "{'CEP': '82560-420', 'Logradouro': 'Roque Lazarotto', 'Bairro': 'Boa Vista', 'Cidade': 'Curitiba', 'Estado': 'PR'}",
-            'Numero': '66'}
-
-update_banco_dados(cliente)
+# cliente = {'Nome': 'gabrie', 
+#            'CPF': '110.415.949-09', 
+#            'RG': '09.318.296-4', 
+#            'Nascimento': '05/05/1997',
+#              'Endereco': "{'CEP': '82560-420', 'Logradouro': 'Roque Lazarotto', 'Bairro': 'Boa Vista', 'Cidade': 'Curitiba', 'Estado': 'PR'}",
+#             'Numero': '66'}
